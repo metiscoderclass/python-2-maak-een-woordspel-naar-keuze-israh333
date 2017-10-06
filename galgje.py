@@ -1,36 +1,53 @@
 woord = ["huis"]
 ggl = ["",""]
+letters = ["h","u","i","s"]
 gl = ["",""]
 fouten = 0
 print ("Welkom bij ")
 print("hier komt galgje")
 
 
+while True:
+
+    vraag1 = input("Kies een letter of kies een ? om het woord te raden.")
+    lengte = len(vraag1)
+    if lengte > 1:
+
+        input("Fout probeer nog een keer")
+    else:
+
+        if vraag1 == letters:
+            print("Goed geraden")
+            print("Dit alle geraden letters."+ gl)
 
 
-vraag1 = input(str("Kies een letter of kies een ? om het woord te raden."))
-if vraag1 > 1:
-    print("Vul aub 1 letter in of een ? om het woord te raden.")
-print("Dit zijn de goed geraden letters."ggl)
-print("Dit alle geraden letters."gl)
-
-
-
-
-
-
-
-
-
-
-
-
+                print("Dit zijn de goed geraden letters." + ggl)
+                print("Dit alle geraden letters." + gl)
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+if letters == woord:
+    print("Ja je hebt ht woord geraden goedzo!" + woord)
+
+"""
 """
 woordenlijst= lijst met geheime woorden geheim woord wordt bepaald = bijvoorbeeld appel
 functie=aantalFouten om fouten te tellen - aantalFouten = 0
