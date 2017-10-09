@@ -1,30 +1,73 @@
-woord = ["huis"]
-ggl = ["",""]
-letters = ["h","u","i","s"]
-gl = ["",""]
+woord = "zak"
+ggl = []
+gl = []
 fouten = 0
-print ("Welkom bij ")
-print("hier komt galgje")
+print ("Welkom bij")
+
+print("""
+    ___         ___        ___     ___
+   / __)       / __ \    (    )   /  __)    _
+  (  (_-.     / (__) \    )  (__ ( (_-.     (
+   \____/    (___)(___)  (______) \___/  \___)
+
+
+""")
 
 
 while True:
 
-    vraag1 = input("Kies een letter of kies een ? om het woord te raden.")
+    vraag1 =  input("Kies een letter of kies een ? om het woord te raden:")
     lengte = len(vraag1)
-    if lengte > 1:
+    lengtewoord = len(woord)
+    lengteggl = len(ggl)
 
-        input("Fout probeer nog een keer")
+
+    if lengte > 1:
+        input("Fout, probeer het nog een keer:")
+        fouten += 1
     else:
 
-        if vraag1 == letters:
-            print("Goed geraden")
-            print("Dit alle geraden letters."+ gl)
+        if vraag1 in woord:
+            ggl.append(vraag1)
+            print("Goed geraden!")
+            print("Dit zij alle geraden letters: " + str(gl))
+            print("Dit zijn je goed geraden letters: " + str(ggl))
+
+        elif vraag1 == "?":
+            raad = input("Raad het woord:")
+
+        elif vraag1 not in woord:
+            gl.append(vraag1)
+            vraag2 = input("Fout, probeer het nog een keer:")
+            print("Dit zij alle geraden letters: " + str(gl))
+            print("Dit zijn je goed geraden letters: " + str(ggl))
+            fouten += 1
+            if vraag2 in woord:
+                ggl.append(vraag2)
+                print("Goed geraden!")
+                print("Dit zij alle geraden letters: " + str(gl))
+                print("Dit zijn je goed geraden letters: " + str(ggl))
+
+            elif vraag2 not in woord:
+                gl.append(vraag2)
+                vraag2 = input("Fout, probeer het nog een keer:")
+                print("Dit zij alle geraden letters: " + str(gl))
+                print("Dit zijn je goed geraden letters: " + str(ggl))
+                fouten += 1
+
+            if fouten > 5:
+                einde =input("Je hebt 5 fouten kies stop om te stoppen.")
+                if einde = "stop":
+                    break
 
 
-                print("Dit zijn de goed geraden letters." + ggl)
-                print("Dit alle geraden letters." + gl)
-
-
+            if lengteggl == lengtewoord:
+                raad = input("Raad het woord met alle goed geraden letters:")
+                if raad == woord:
+                    print("Je hebt het woord goed geraden!")
+                    break
+                else:
+                    input("Fout, probeer het nog een keer:")
 
 
 
